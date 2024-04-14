@@ -163,7 +163,7 @@
                             <div class="contact-area bg-light-white-2">
                                 <h5 class="contact-title">I'm always open to discussing about projects</h5>
                                 <h5 class="contact-title-b">design work or partnerships.</h5>
-                                <form class="contact-form" action="#" method="post" id="formId">
+                                <form class="contact-form" action="mail.php" method="post" id="formId">
                                     <div class="form-input-item mb-60">
                                         <label class="input-lebel name">name *</label>
                                         <input name="name" class="input-box name" type="text" required>
@@ -248,50 +248,6 @@
 
         </div>
     </div>
-
-    <script>
-        // Replace 'YOUR_EMAIL_ADDRESS' with your actual email address
-const emailEndpoint = 'navrishamsandhu8@gmail.com';
-
-// Function to send form data to backend
-const sendEmail = async (formData) => {
-  try {
-    const response = await fetch(emailEndpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
-    if (response.ok) {
-      console.log('Email sent successfully');
-    } else {
-      console.error('Failed to send email');
-    }
-  } catch (error) {
-    console.error('Error sending email:', error);
-  }
-};
-
-// Example usage - call this function when the form is submitted
-const handleSubmit = (event) => {
-  event.preventDefault(); // Prevent default form submission
-  const form = event.target;
-  const formData = new FormData(form);
-  const formDataObject = {};
-  formData.forEach((value, key) => {
-    formDataObject[key] = value;
-  });
-  
-  // Call sendEmail function with form data
-  sendEmail(formDataObject);
-};
-
-// Attach event listener to the form submit event
-const form = document.getElementById('formId'); // Replace 'your-form-id' with the ID of your form element
-form.addEventListener('submit', handleSubmit);
-
-    </script>
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
